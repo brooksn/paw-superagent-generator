@@ -2,6 +2,9 @@
 
 request
   .{{{methodFn}}}('{{{url}}}')
+  {{#if request.httpBasicAuth}}
+  .auth('{{{request.httpBasicAuth.username}}}', '{{{request.httpBasicAuth.password}}}')
+  {{/if}}
   {{#if request.body}}
   .send(request.body)
   {{/if}}

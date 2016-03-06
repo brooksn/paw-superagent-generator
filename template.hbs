@@ -1,0 +1,29 @@
+// {{name}}
+
+request
+  .{{{methodFn}}}('{{{url}}}')
+  {{#if request.body}}
+  .send(request.body)
+  {{/if}}
+  {{#if request.jsonBody}}
+  .send(request.jsonBody)
+  {{/if}}
+  {{#each headers}}
+  .set('{{{@key}}}', '{{{this}}}')
+  {{/each}}
+  {{#each request.multipartBody}}
+  .attach('{{{@key}}}', '{{{this}}}')
+  {{/each}}
+  {{#each queries}}
+  .query({{{this}}})
+  {{/each}}
+  {{#unless request.redirects}}
+  .redirects(0)
+  {{/unless}}
+  .end(function(err, res){
+    if (err || !res.ok) {
+      console.log('Oh no! error');
+    } else {
+      console.log('yay got ' + JSON.stringify(res.body));
+    }
+  });

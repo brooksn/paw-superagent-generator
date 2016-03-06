@@ -1,0 +1,14 @@
+{
+  "name": "paw-superagent-generator",
+  "version": "1.0.0",
+  "description": "Paw extension to generate SuperAgent requests.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brooksn/paw-superagent-generator.git"
+  },
+  "author": "Brooks Newberry <mail@brooks.is>",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/brooksn/paw-superagent-generator/blob/master/LICENSE"
+  }
+}

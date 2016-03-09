@@ -5,11 +5,10 @@ request
   {{#if request.httpBasicAuth}}
   .auth('{{{request.httpBasicAuth.username}}}', '{{{request.httpBasicAuth.password}}}')
   {{/if}}
-  {{#if request.body}}
-  .send(request.body)
-  {{/if}}
   {{#if request.jsonBody}}
-  .send(request.jsonBody)
+  .send({{{jsonBody}}})
+  {{else if request.body}}
+  .send({{{request.body}}})
   {{/if}}
   {{#each headers}}
   .set('{{{@key}}}', '{{{this}}}')

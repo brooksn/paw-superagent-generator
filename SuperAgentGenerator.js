@@ -51,6 +51,7 @@ var Generator = function() {
         url: request.url
       },
       url: url,
+      jsonBody: JSON.stringify(request.jsonBody, null, '  '),
       name: request.name || url,
       queries: queries,
       headers: headers
